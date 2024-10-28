@@ -8,15 +8,22 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
+// For metadata of dynamic pages
+// Metadata is read first before rendering page
+export async function generateMetadata({ params }) {
+  const param = await params;
+  const meal = await getMeal(param.mealSlug);
+  if (!meal) {
+    // Show the closest not found
+    notFound();
+  }
+  return { title: meal.title, description: meal.summary };
+}
+
 export default async function MealDetailsPage({ params }) {
   //mealSlug is key and the URL param is value
   const param = await params;
   const meal = getMeal(param.mealSlug);
-
-  if (!meal) {
-    // Show the closest not found or error page
-    notFound();
-  }
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br/>");
   return (
@@ -27,7 +34,7 @@ export default async function MealDetailsPage({ params }) {
         </div>
         <div className={styles.headerText}>
           <h1>{meal.title}</h1>
-          <p className={styles.creater}>
+          <p className={styles.creator}>
             by <a href={`mailto:${meal.creator_email}`}>{meal.creator}</a>
           </p>
           <p className={styles.summary}>{meal.summary}</p>

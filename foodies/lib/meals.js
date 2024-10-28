@@ -11,7 +11,7 @@ const db = sql("meals.db");
 
 export async function getMeals() {
   // For extra delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
 
   // throw new Error("Loading meals failed");
 
