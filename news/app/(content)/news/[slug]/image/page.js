@@ -13,8 +13,6 @@ export default async function ImagePage({ params }) {
     notFound();
   }
 
-  console.log(newsItem.title);
-
   return (
     <div className="fullscreen-image">
       <h2>HELLO</h2>

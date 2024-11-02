@@ -68,4 +68,3 @@ export async function getNewsForYearAndMonth(year, month) {
   return news;
 }
 
-///fdsafasdfasdf
