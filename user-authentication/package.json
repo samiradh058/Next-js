@@ -1,0 +1,28 @@
+{
+  "name": "user-authentication",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@eslint/config-array": "^0.19.0",
+    "@eslint/object-schema": "^2.1.4",
+    "@lucia-auth/adapter-sqlite": "^3.0.2",
+    "better-sqlite3": "^11.5.0",
+    "glob": "^11.0.0",
+    "lucia": "^3.2.2",
+    "next": "15.0.2",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "rimraf": "^6.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "eslint-config-next": "15.0.2"
+  }
+}
